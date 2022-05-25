@@ -1,0 +1,67 @@
+<nav id="izil" class="undefined">
+    <div id="iaoh" class="undefined">
+        <div data-columns="1" data-gjs="navbar" id="iiul" class="row undefined">
+            <div data-column="1" id="ig7k" class="cell">
+                <img id="imr1u" src="https://cdn.grapedrop.com/u5f631954a3924f379de303e603ec8319/32ef00133f9c4ecaaae76210e1160a64_group_18990.png"
+                class="" />
+                <div id="i0ma2" class="undefined">
+                    <div id="template-i51ti" class="undefined"></div>
+                    <div id="template-i74m3" class="undefined"></div>
+                    <div id="template-irkhy" class="undefined"></div>
+                </div>
+            </div>
+            <div data-column="1" id="i0bnl" class="cell">
+                <div data-gjs="navbar-items" id="template-itb7b" class="undefined">
+                    <nav data-gjs="navs" id="template-i8b9j" class="undefined">
+                        <div id="MainMenu" class="">
+<a id="izdchj" class="menu-link nav-item" *ngIf='userId!=null' [routerLink]="['/home']">
+                                                                {{'source.home' | i18next}}
+                                                            
+                                                        </a><a id="izdchj"
+                            class="menu-link nav-item" *ngIf='isAdminUser && userId!=null' [routerLink]="['/admin']">
+                                                            {{'source.admin' | i18next}}
+                                                         </a>
+
+<a id="izdchj"
+                            class="menu-link nav-item" *ngIf='userId!=null' [routerLink]="['/sefscreen']">
+                                                            {{'source.sefscreen' | i18next}}
+                                                            </a>
+ <a id="i4izs3"
+                            class="menu-link nav-item">
+                                <a style="font-size: medium;" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true"
+                                class="btn dropdown-toggle" id="dropdownMenuButton"> 
+                                {{'source.selectLanguage' | i18next }} <b class="caret"></b> </a>
+
+                            <ul
+                            class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li> <a class="dropdown-item" *ngFor="let lang of languages" (click)='confirmLangModel(lang)'> {{'languages.' + lang | i18nextCap }}</a>
+
+                                </li>
+                                </ul>
+                                </a>
+                                <button type="button" id="ipek5x" class="btn btn-primary" *ngIf='userId!=null'
+                                (click)="logout()"> <a style="color: white;">{{'source.logout' | i18next}}</a>
+
+                                </button>
+                                <button id="ipek5x" class="btn btn-primary" type="button" *ngIf='userId==null'
+                                [routerLink]="['/login']">{{'source.login' | i18next}}</button>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'top': '100px','display': confirmLangChangeModal}">
+    <div class="modal-dialog modal-sm" role="dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>language change cause you to re-login</p>
+            </div>
+            <div class="modal-footer" style="padding: 5px">
+                <button type="button" (click)="confirmLangChange()" class="btn btn-default">Confirm</button>
+                <button type="button" (click)="onCloseHandled()" class="btn btn-default">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
